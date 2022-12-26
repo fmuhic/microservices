@@ -1,7 +1,16 @@
 package com.example.sabina.api.models
 
+import jakarta.persistence.*
+
+
+@Entity(name = "person")
 data class User (
-    val accountNumber: Long,
-    val name: String,
-    val surname: String
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+    var id: Long? = null,
+
+    var firstName: String? = null,
+
+    var lastName: String? = null,
 )

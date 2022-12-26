@@ -1,16 +1,21 @@
 package com.example.sabina.api.controllers
 
 import com.example.sabina.api.models.User
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RestController
+import com.example.sabina.api.repositories.UserRepository
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
 
 @RestController
-class UserController {
+@RequestMapping("/user")
+class UserController(val userRepository: UserRepository) {
 
-    @GetMapping("/")
-    fun listUsers(): User {
-        val user = User(12345L, "Daniel", "Ricciardo");
-        return user
+    @GetMapping
+    fun listUsers(): ResponseEntity<Iterable<User>> = ResponseEntity(userRepository.findAll(), HttpStatus.OK)
+
+    @PostMapping
+    fun createUser(@RequestBody newUser: User): ResponseEntity<Any> {
+        userRepository.save(newUser)
+        return ResponseEntity(HttpStatus.CREATED)
     }
-
 }
