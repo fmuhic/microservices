@@ -1,0 +1,10 @@
+.home {
+}
+
+.home-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 33px;
+    color: #16A085;
+}
