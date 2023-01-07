@@ -9,3 +9,15 @@ spring:
     username: postgres
     password: postgres
     driverClassName: org.postgresql.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, shutdown, prometheus
+  endpoint:
+    health:
+      show-components: always
+      show-details: always
+      probes:
+        enabled: true
