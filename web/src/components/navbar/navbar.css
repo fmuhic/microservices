@@ -1,7 +1,6 @@
 .my-navbar {
     background-color: white;
-    box-shadow: rgb(90 114 123 / 11%) 0px 7px 30px 0px;
-    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: rgba(90, 114, 123, 0.11) 0px 7px 30px 0px;
 
     height: 90px;
     width: 100%;
@@ -10,9 +9,10 @@
     flex-direction: row;
 
     box-sizing: border-box;
-    flex-shrink: 0;
-    z-index: 1100;
-    padding: 20px 100px;
+    padding: 20px 250px;
+    margin-bottom: 80px;
+    font-family: "DM Sans", sans-serif;
+    color: #2E4053;
 }
 
 .navbar-title {
@@ -20,13 +20,11 @@
     align-items: center;
 
     font-weight: 400;
-    font-family: "DM Sans", sans-serif;
     font-size: 35px;
     line-height: 1.5;
 }
 
 .navbar-title>.svg-inline--fa.fa-building-columns {
-    color: darkblue;
     font-size: larger;
     margin-right: 20px;
 }
@@ -41,38 +39,26 @@
     border-color: lightgray;
 }
 
-.navbar-option,
-.navbar-profile-item {
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.navbar-options,
-.navbar-profile {
-    margin-top: 30px;
-}
-
 .navbar-option {
     border-right: solid 1px;
 }
 
 .navbar-option,
 .navbar-profile-item {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.navbar-profile {
-    margin-left: 50px;
-    margin-top: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .navbar-profile-messages,
 .navbar-profile-user {
-    font-size: larger;
+    font-size: 20px;
     cursor: pointer;
 }
 
 .navbar-right-side {
     display: flex;
+    font-size: 20px;
+    padding: 10px;
+    align-items: center;
 }

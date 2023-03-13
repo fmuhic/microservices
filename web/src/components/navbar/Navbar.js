@@ -21,7 +21,7 @@ function Navbar() {
                 </div>
 
                 <div className="navbar-profile">
-                    <div className="navbar-profile-item last-login">Last login: {showTime}</div>
+                    <div className="navbar-profile-item last-login">Zadnja prijava: {showTime}</div>
                     <div className="navbar-profile-item navbar-profile-messages"><FontAwesomeIcon icon={solid('envelope')} /></div>
                     <div className="navbar-profile-item navbar-profile-user"><FontAwesomeIcon icon={solid('user')} /></div>
                 </div>
