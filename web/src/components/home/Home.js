@@ -1,11 +1,11 @@
 import './home.css';
+import ActivityGraph from '../activityGraph/ActivityGraph.js';
+import React from 'react';
 
 function Home() {
     return (
-        <div className="home">
-            <div className="home-header">
-                hello banking web
-            </div>
+        <div className="component home">
+            <ActivityGraph />
         </div>
     );
 }
