@@ -9,8 +9,6 @@ data class User (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     var id: Long? = null,
-
     var firstName: String? = null,
-
     var lastName: String? = null,
 )
