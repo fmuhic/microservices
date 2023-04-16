@@ -1,6 +1,7 @@
 package com.example.sabina.api.repositories
 
 import com.example.sabina.api.models.User
-import org.springframework.data.repository.CrudRepository
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.repository.history.RevisionRepository
 
-interface UserRepository : CrudRepository<User, Long?>
+interface UserRepository : JpaRepository<User, Long>, RevisionRepository<User, Long, Int>
