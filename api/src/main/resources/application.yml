@@ -1,12 +1,18 @@
 server:
   port: 8080
 
+
 spring:
   jpa:
     database: POSTGRESQL
     show-sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        envers:
+          autoRegisterListeners: false
+
   datasource:
     url: jdbc:postgresql://localhost:5432/banking
     username: postgres

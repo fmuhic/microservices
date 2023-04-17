@@ -11,9 +11,11 @@ class PostInsertHandler(enversService: EnversService): EnversPostInsertEventList
     override fun onPostInsert(event: PostInsertEvent) {
         when (val e = event.entity) {
             is User -> {
-                e.firstName != "Fuad".also {
+                println("user here ______________")
+                if (e.firstName == "Fuad1") {
                     println("onPostInsert: executed __________________________________________________________________")
-                }
+                    return
+                } else super.onPostInsert(event).also { println("User going through") }
             }
 
             else -> super.onPostInsert(event)

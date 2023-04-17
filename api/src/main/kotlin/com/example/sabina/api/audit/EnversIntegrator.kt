@@ -6,7 +6,11 @@ import org.hibernate.engine.spi.SessionFactoryImplementor
 import org.hibernate.envers.boot.internal.EnversService
 import org.hibernate.event.service.spi.EventListenerRegistry
 import org.hibernate.event.spi.EventType
+import org.hibernate.event.spi.PostCollectionRecreateEventListener
+import org.hibernate.event.spi.PostCollectionUpdateEventListener
 import org.hibernate.event.spi.PostInsertEventListener
+import org.hibernate.event.spi.PostUpdateEventListener
+import org.hibernate.event.spi.PreDeleteEventListener
 import org.hibernate.event.spi.PreUpdateEventListener
 import org.hibernate.integrator.spi.Integrator
 import org.hibernate.service.ServiceRegistry
@@ -27,11 +31,15 @@ class EnversIntegrator: Integrator {
         val enversService: EnversService = serviceRegistry.getService(EnversService::class.java)
         if (enversService.entitiesConfigurations.hasAuditedEntities()) {
             val listenerRegistry: EventListenerRegistry = serviceRegistry.getService(EventListenerRegistry::class.java)
-            listenerRegistry.appendListeners(
+            listenerRegistry.setListeners(
                 EventType.PRE_UPDATE,
                 *arrayOf<PreUpdateEventListener>(PreUpdateHandler(enversService))
             )
-            listenerRegistry.appendListeners(
+            listenerRegistry.setListeners(
+                EventType.POST_UPDATE,
+                *arrayOf<PostUpdateEventListener>(PostUpdateHandler(enversService))
+            )
+            listenerRegistry.setListeners(
                 EventType.POST_INSERT,
                 *arrayOf<PostInsertEventListener>(PostInsertHandler(enversService))
             )

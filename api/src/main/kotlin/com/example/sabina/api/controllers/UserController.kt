@@ -23,7 +23,14 @@ class UserController(
 
     @PostMapping
     fun createUser(@RequestBody newUser: User): ResponseEntity<Any> {
-        userRepository.save(newUser)
+        when (val oldUser = userRepository.findByFirstName(newUser.firstName!!)) {
+            null -> userRepository.save(newUser).also { println("creating new user") }
+            else -> {
+                oldUser.lastName += "!"
+                userRepository.save(oldUser).also { println("Updating user") }
+            }
+        }
+
         return ResponseEntity(HttpStatus.CREATED)
     }
 }
