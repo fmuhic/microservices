@@ -1,11 +1,12 @@
 import './home.css';
-import ActivityGraph from '../activityGraph/ActivityGraph.js';
+import Transactions from '../transactions/Transactions';
 import React from 'react';
 
 function Home() {
     return (
         <div className="component home">
-            <ActivityGraph />
+            {/* <ActivityGraph /> */}
+            <Transactions />
         </div>
     );
 }
