@@ -13,7 +13,6 @@ class UserController(
     val userRepository: UserRepository,
     metricsRegistry: MeterRegistry
 ) {
-
     private val listUsersCounter = metricsRegistry.counter("list_users_total")
 
     @GetMapping

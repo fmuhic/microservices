@@ -10,7 +10,6 @@ import org.springframework.web.servlet.HandlerInterceptor
 import org.springframework.web.servlet.ModelAndView
 import java.util.stream.Collectors
 
-
 class AuditInterceptor: HandlerInterceptor {
     companion object {
         private val log = logger {}
@@ -22,11 +21,11 @@ class AuditInterceptor: HandlerInterceptor {
         response: HttpServletResponse,
         handler: Any
     ): Boolean {
-        request.headerNames.asIterator().forEach {
-            log.info { "Pre handle header: $it : ${request.getHeader(it)}" }
-        }
-        val user = gson.fromJson(request.reader.lines().collect(Collectors.joining()), User::class.java)
-        println("Body bytes: $user")
+//        request.headerNames.asIterator().forEach {
+//            log.info { "Pre handle header: $it : ${request.getHeader(it)}" }
+//        }
+//        val user = gson.fromJson(request.reader.lines().collect(Collectors.joining()), User::class.java)
+//        println("Body bytes: $user")
         return true
     }
 
