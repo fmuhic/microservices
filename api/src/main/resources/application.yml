@@ -12,6 +12,14 @@ spring:
       hibernate:
         envers:
           autoRegisterListeners: false
+  kafka:
+    producer:
+      bootstrap-servers: 127.0.0.1:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: api_kafka_producer
+      transaction-topic: transactions
+
 
   datasource:
     url: jdbc:postgresql://localhost:5432/banking
