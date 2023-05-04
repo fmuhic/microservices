@@ -4,16 +4,11 @@ import jakarta.persistence.*
 import org.hibernate.envers.Audited
 
 @Audited
-@Entity(name = "person")
-class User {
+@Entity(name = "account_status_code")
+class AccountStatusCode(
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(columnDefinition = "serial")
-    var id: Long? = null
-
-    @Column(name = "first_name")
-    var firstName: String? = null
-
-    @Column(name = "last_name")
-    var lastName: String? = null
-}
+    var id: Long? = null,
+    var name: String? = null
+)
