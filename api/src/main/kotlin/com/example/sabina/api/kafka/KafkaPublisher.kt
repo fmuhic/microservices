@@ -43,6 +43,7 @@ class KafkaProxyPublisher(
             while (!Thread.interrupted()) {
                 try {
                     val msg = queue.take()
+                    println("Sending message $msg")
 
                     kafka.send(msg).whenComplete { res, err ->
                         when (err) {

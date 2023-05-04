@@ -1,9 +1,8 @@
 package com.example.sabina.api.repositories
 
 import com.example.sabina.api.models.User
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.data.repository.history.RevisionRepository
+import org.springframework.data.repository.CrudRepository
 
-interface UserRepository : JpaRepository<User, Long>, RevisionRepository<User, Long, Int> {
+interface UserRepository : CrudRepository<User, Long> {
     fun findByFirstName(name: String): User?
 }

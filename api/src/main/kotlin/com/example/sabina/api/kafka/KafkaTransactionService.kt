@@ -1,5 +1,6 @@
 package com.example.sabina.api.kafka
 
+import com.example.sabina.api.models.Transaction
 import com.google.gson.Gson
 import jakarta.annotation.PreDestroy
 import org.apache.kafka.clients.producer.ProducerRecord
@@ -22,13 +23,15 @@ class KafkaTransactionService(
 
     private val publisher = KafkaProxyPublisher(kafka, topicName, queueSize)
 
-    fun send(msg: String) =
+    fun send(msg: Transaction) =
         publisher.offer(
             ProducerRecord(
                 topicName,
-                msg
+                gson.toJson(msg)
             )
-        )
+        ).also {
+            println("Transaction offered: $it")
+        }
 
     @PreDestroy
     fun stop() = publisher.stop()
