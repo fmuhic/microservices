@@ -16,7 +16,7 @@ class UserController(
     private val listUsersCounter = metricsRegistry.counter("list_users_total")
 
     @GetMapping
-    fun listUsers(): ResponseEntity<MutableList<User>> = ResponseEntity(userRepository.findAll(), HttpStatus.OK).also {
+    fun listUsers() = ResponseEntity(userRepository.findAll(), HttpStatus.OK).also {
         listUsersCounter.increment()
     }
 
