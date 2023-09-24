@@ -2,13 +2,13 @@ import React from "react";
 import TableRow from "../tablerow/TableRow";
 import TableHead from "../tablehead/TableHead";
 
-const Table = ({ theadData, tbodyData, customClass }) => {
+const Table = ({ theadData, tbodyData }) => {
     return (
-        <table className={customClass}>
+        <table>
             <thead>
                 <tr>
                     {theadData.map((h) => {
-                        return <TableHead key={h} item={h} />;
+                        return <TableHead key={h.replace(/_/g, ' ')} item={h.replace(/_/g, ' ')} />;
                     })}
                 </tr>
             </thead>

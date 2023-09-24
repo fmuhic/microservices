@@ -62,3 +62,16 @@
     padding: 10px;
     align-items: center;
 }
+
+.navbar-option a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-option a:active {
+    background-color: yellow;
+}
+
+.navbar-option a:focus {
+    color: red;
+}

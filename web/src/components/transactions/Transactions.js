@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Table from '../table/Table';
+import './transactions.css';
 
 function Transactions() {
     const url = 'http://localhost:8080/transaction';

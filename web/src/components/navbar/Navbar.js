@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 // import Button from 'react-bootstrap/Button';
 import { showTime } from "../..";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
@@ -15,7 +16,7 @@ function Navbar() {
 
             <div className="navbar-right-side">
                 <div className="navbar-options">
-                    <div className="navbar-option">Transakcije</div>
+                    <div className="navbar-option"><Link to="/transactions">Transakcije</Link></div>
                     <div className="navbar-option">Proizvodi</div>
                     <div className="navbar-option">Alati</div>
                 </div>

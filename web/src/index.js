@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Home from './components/home/Home';
 import Navbar from './components/navbar/Navbar';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const date = new Date();
@@ -16,8 +17,10 @@ const showTime = date.getHours()
 
 root.render(
     <React.StrictMode>
-        <Navbar />
-        <Home />
+        <BrowserRouter>
+            <Navbar />
+            <Home />
+        </BrowserRouter>
     </React.StrictMode>
 );
 
