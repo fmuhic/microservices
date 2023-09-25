@@ -1,18 +1,21 @@
 body {
     background-color: rgb(250, 251, 251);
+    font-family: roboto,sans-serif;
+    color: #333
 }
 
 html,
 body,
 #root {
     height: 100%;
+    margin: 0px;
 }
 
 .component {
+    box-sizing: border-box;
     background-color: #fff;
+    width: 100%;
+    max-width: 1000px;
     padding: 20px;
-    border-radius: 4px;
-    max-width: 1420px;
-    margin: 20px auto;
-    box-shadow: rgba(90, 114, 123, 0.11) 0px 7px 30px 0px;
+    margin: 0px auto;
 }
