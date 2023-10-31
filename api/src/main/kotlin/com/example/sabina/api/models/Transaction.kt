@@ -10,9 +10,6 @@ data class Transaction (
     @Column(columnDefinition = "serial")
     var id: Long? = null,
 
-    @Column(name = "account_id", nullable = false)
-    var accountId: Long? = null,
-
     @Column(name = "datetime", nullable = true)
     var datetime: Long? = Instant.now().toEpochMilli(),
 

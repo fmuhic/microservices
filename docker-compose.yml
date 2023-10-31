@@ -6,7 +6,7 @@ volumes:
 
 services:
   postgres:
-    image: postgres
+    image: postgres:14.9-alpine3.18
     ports:
       - "5432:5432"
     environment:
